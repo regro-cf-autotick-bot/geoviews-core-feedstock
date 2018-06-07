@@ -1,23 +1,23 @@
-{% set name = "geoviews-core" %}
 {% set version = "1.5.1" %}
-{% set sha256 = "e2fda0fc0e09175a2de72dca018bcaca78fa9ca0de782ed7e243a95ee90b4b43" %}
 
 package:
-  name: {{ name }}
+  name: geoviews-core
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.zip
-  sha256: {{ sha256 }}
+  sha256: e2fda0fc0e09175a2de72dca018bcaca78fa9ca0de782ed7e243a95ee90b4b43
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - geoviews = geoviews.__main__:main
 
 requirements:
+  run_constrained:
+    - geoviews {{ version }}
   build:
     - python
     - pip

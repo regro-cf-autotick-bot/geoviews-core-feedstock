@@ -18,7 +18,7 @@ build:
 requirements:
   run_constrained:
     - geoviews {{ version }}
-  build:
+  host:
     - python
     - pip
     - param >=1.6.1,<2.0
@@ -41,6 +41,7 @@ test:
 about:
   home: https://geoviews.org
   license: BSD 3-Clause
+  license_family: BSD
   license_file: LICENSE
   summary: GeoViews is a Python library that makes it easy to explore and visualize
         geographical, meteorological, and oceanographic datasets, such as those used

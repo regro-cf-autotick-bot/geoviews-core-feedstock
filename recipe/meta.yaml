@@ -1,17 +1,17 @@
-{% set version = "1.5.1" %}
+{% set version = "1.6.3" %}
 
 package:
   name: geoviews-core
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.zip
-  sha256: e2fda0fc0e09175a2de72dca018bcaca78fa9ca0de782ed7e243a95ee90b4b43
+  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
+  sha256: 5db961570e4dfe15c93505c176eceffa2086c5547cac43fd9c14b3281a26d5fe
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - geoviews = geoviews.__main__:main
 
